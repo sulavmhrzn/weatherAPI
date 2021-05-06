@@ -4,9 +4,9 @@ API_KEY: str = None
 
 
 def get_weather(city: str, country: str, units: str):
-    url = f"https://api.openweathermap.org/data/2.5/weather?q={country}&appid={API_KEY}"
+    url = f"https://api.openweathermap.org/data/2.5/weather?q={country}&appid={API_KEY}&units={units}"
     if city:
-        url = f"https://api.openweathermap.org/data/2.5/weather?q={country},{city}&appid={API_KEY}"
+        url = f"https://api.openweathermap.org/data/2.5/weather?q={country},{city}&appid={API_KEY}&units={units}"
     response = requests.get(url)
     if response.status_code == 200:
         json_data = response.json()

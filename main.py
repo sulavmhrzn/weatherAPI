@@ -9,12 +9,16 @@ from services import get_weather
 
 api = fastapi.FastAPI()
 api.mount("/static", StaticFiles(directory="static"), name="static")
-api.include_router(home.router)
-api.include_router(weather_api.router)
 
 
 def configure():
+    configure_routes()
     configure_json()
+
+
+def configure_routes():
+    api.include_router(home.router)
+    api.include_router(weather_api.router)
 
 
 def configure_json():
@@ -29,6 +33,6 @@ def configure_json():
 
 if __name__ == "__main__":
     configure()
-    uvicorn.run(api)
+    uvicorn.run("main:api", host="127.0.0.1", port=8000, reload=True)
 else:
     configure()
