@@ -1,13 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/static/css/main.css">
-</head>
-<body>
-    <h1>Home</h1>
-</body>
-</html>
+{%extends 'layout.html'%}
+{%block content%}
+<div class="container">
+          <h1>Weather API</h1>
+            <div class="endpoints mt-3">
+                <h3>Endpoints:</h3>
+                <ul>
+                    <li><b>GET:</b> <a href="/api/weather">/api/weather</a></li>
+                    <li><b>GET:</b><i>(Optional)</i></li>
+                    <ul>
+                        <li>
+                            <a href="/api/weather?city=kathmandu&country=nepal&unit=metric">
+                                /api/weather/?city={city}&country={country}&unit={unit}
+                            </a>
+                        </li>
+                        <li>city</li>
+                        <li>country</li>
+                        <li>units:</li>
+                        <ul>
+                            <li><b>Default</b> metric: Celsius</li>
+                            <li>imperial: Fahrenheit</li>
+                            <li>standard: Kelvin</li>
+                        </ul>
+                    </ul>
+                </ul>
+            </div>
+</div>
+
+{%endblock content%}
