@@ -7,5 +7,6 @@ router = APIRouter()
 
 @router.get("/api/weather")
 def weather(loc: Location = Depends()):
-    get_weather(**loc.dict())
+    data = get_weather(**loc.dict())
+    print(data)
     return {"hello": "weather"}
