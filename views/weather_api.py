@@ -6,6 +6,6 @@ router = APIRouter()
 
 
 @router.get("/api/weather")
-def weather(loc: Location = Depends()):
-    data = get_weather(**loc.dict())
+async def weather(loc: Location = Depends()):
+    data = await get_weather(**loc.dict())
     return data
