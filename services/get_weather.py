@@ -25,4 +25,3 @@ async def get_weather(city: str, country: str, units: str):
             "name": json_data["name"],
         }
         return data
-        # return response.json()
