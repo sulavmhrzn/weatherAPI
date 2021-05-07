@@ -17,6 +17,8 @@ def get_weather(city: str, country: str, units: str):
             "feels_like": json_data["main"]["feels_like"],
             "temp_min": json_data["main"]["temp_min"],
             "temp_max": json_data["main"]["temp_max"],
+            "country": json_data["sys"]["country"],
+            "name": json_data["name"],
         }
         return data
     return response.json()
